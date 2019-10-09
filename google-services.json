@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "538521733302",
+    "firebase_url": "https://ktyd-developer.firebaseio.com",
+    "project_id": "ktyd-developer",
+    "storage_bucket": "ktyd-developer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538521733302:android:9adfba95fb3c89b1",
+        "android_client_info": {
+          "package_name": "com.ktyd.developer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538521733302-pthdn3fjbll71qc3817t49nknsbl6tvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAAUw03O_yVLrJj4USwQIngpZS9GZzCpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538521733302-pthdn3fjbll71qc3817t49nknsbl6tvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

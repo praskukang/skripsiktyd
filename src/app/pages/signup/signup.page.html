@@ -1,0 +1,50 @@
+<ion-content class="swiper-no-swiping">
+  <div class="container top" [hidden]="keyboard.isVisible">
+
+  </div>
+
+  <ion-slides>
+
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Register</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeholder="Password" [(ngModel)]="userRegister.password"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" routerLink="/createprofile" (click)="register()" color="light" expand="block">
+          Register
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ocean">
+    <div class="waves" [ngStyle]="{'background-position-x': wavesPosition + 'px'}"></div>
+
+    <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
+    <ion-row>
+      <ion-col>
+        <ion-text text-center class="block">Have an Account ?
+          <span class="bold" routerLink="/login">Login here</span></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text text-center class="block">Forgot Password ?
+          <span class="bold" routerLink="/reset">Here</span></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row><ion-col></ion-col></ion-row>
+    <ion-row><ion-col></ion-col></ion-row>
+
+      <span>Selamat Datang di Aplikasi Karang Taruna Yodha Dharma</span>
+    </div>
+  </div>
+</ion-content>
