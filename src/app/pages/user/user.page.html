@@ -26,7 +26,9 @@
         <h2>  {{ item.fname }} </h2>
         <h2>  {{ item.lname }} </h2>
         <h2>  {{ item.alamat }} </h2>
-        <h2>  {{ item.jabatan }} </h2>
+        <h2>  {{ item.jabatan | json }} </h2>
+        <h2>  {{ item.email }} </h2>
+        <h2>  {{ item.userid }} </h2>
           <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
       </ion-item>
