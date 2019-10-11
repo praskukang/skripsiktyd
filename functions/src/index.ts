@@ -28,3 +28,20 @@ exports.ktyd = functions.firestore
     return admin.messaging().sendToDevice(tokens, payload)
 
 });
+
+
+exports.createUserData = functions.auth.user().onCreate((user) => {
+const db = admin.firestore()
+const uid = user.uid
+const email = user.email
+const role = "guest"
+const date = Date.now()
+const newUserRef = db.collection("users").doc(uid)
+
+return newUserRef.set({
+    userid: uid,
+    email: email,
+    jabatan: role,
+    createdAt: date
+})
+});

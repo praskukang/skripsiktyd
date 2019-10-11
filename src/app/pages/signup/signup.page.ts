@@ -56,7 +56,7 @@ export class SignupPage implements OnInit {
       this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
-      this.router.navigate(['createprofile']);
+      this.router.navigate(['sidemenu/info']);
     }
 
   }
