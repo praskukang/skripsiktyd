@@ -1,0 +1,3 @@
+# skripsiktyd
+- rules firestore
+- rbac
