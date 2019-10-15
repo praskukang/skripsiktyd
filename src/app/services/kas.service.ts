@@ -20,7 +20,7 @@ export class KasService {
   private kass: Observable<Kas[]>;
 
   constructor(db: AngularFirestore) {
-    this.kasCollection = db.collection<Kas>('kass');
+    this.kasCollection = db.collection<Kas>('kass', ref => ref.orderBy ('createdAt', 'desc'));
 
     this.kass = this.kasCollection.snapshotChanges().pipe(
       map(actions => {

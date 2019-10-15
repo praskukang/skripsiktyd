@@ -20,7 +20,7 @@ export class InfoService {
   private infos: Observable<Info[]>;
 
   constructor(db: AngularFirestore) {
-    this.infoCollection = db.collection<Info>('infos');
+    this.infoCollection = db.collection<Info>('infos', ref => ref.orderBy ('createdAt', 'desc'));
 
     this.infos = this.infoCollection.snapshotChanges().pipe(
       map(actions => {

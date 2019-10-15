@@ -22,7 +22,7 @@ export class UserService {
   private users: Observable<UserProfile[]>;
 
   constructor(db: AngularFirestore) {
-    this.userCollection = db.collection<UserProfile>('users');
+    this.userCollection = db.collection<UserProfile>('users', ref => ref.orderBy ('createdAt', 'desc'));
 
     this.users = this.userCollection.snapshotChanges().pipe(
       map(actions => {

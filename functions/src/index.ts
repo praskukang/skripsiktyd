@@ -3,7 +3,7 @@ import * as admin from 'firebase-admin';
 admin.initializeApp();
 
 exports.ktyd = functions.firestore
-    .document('/todos/{todosId}')
+    .document('/infos/{infosId}')
     .onCreate(async (snap, context) => {
 
 //    const data = snap.data();

@@ -26,7 +26,7 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
      IonicModule.forRoot(),
       AppRoutingModule,
       AngularFireModule.initializeApp(environment.firebase),
-      AngularFirestoreModule,
+      AngularFirestoreModule.enablePersistence(),
       AngularFireAuthModule
     ],
 

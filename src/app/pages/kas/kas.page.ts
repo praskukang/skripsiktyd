@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { Kas, KasService } from './../../services/kas.service';
 
 @Component({
@@ -11,10 +11,7 @@ export class KasPage implements OnInit {
 
   kass: Kas[];
 
-  constructor(private kasService: KasService,
-
-  )
-     { }
+  constructor(private kasService: KasService, private toastCtrl: ToastController, private loadingCtrl: LoadingController){  }
 
   ngOnInit() {
     this.kasService.getKass().subscribe(res => {
@@ -24,6 +21,11 @@ export class KasPage implements OnInit {
 
   remove(item) {
     this.kasService.removeKas(item.id);
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+    toast.present();
   }
 
 }
