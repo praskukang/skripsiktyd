@@ -14,6 +14,7 @@ export class AddkasPage implements OnInit {
   kas: Kas = {
     debit: undefined,
     kredit: undefined,
+    total: undefined,
     createdAt: new Date().getTime(),
 
   };

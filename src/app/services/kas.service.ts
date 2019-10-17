@@ -7,6 +7,7 @@ export interface Kas {
   id?: string;
   debit: string;
   kredit: string;
+  total: string;
   createdAt: number;
 }
 

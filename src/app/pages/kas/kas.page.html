@@ -23,8 +23,9 @@
     <ion-item-sliding *ngFor="let item of kass">
       <ion-item  button [routerLink]="['/addkas', item.id]">
         <ion-label>
-        <h2>  {{ item.debit }} </h2>
-        <h2>  {{ item.kredit }} </h2>
+        <h2>  Debit   : {{ item.debit }} </h2>
+        <h2>  Kredit  : {{ item.kredit }} </h2>
+        <h2>  Total   : {{ item.total }} </h2>
           <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
       </ion-item>

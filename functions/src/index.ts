@@ -31,8 +31,9 @@ exports.ktyd = functions.firestore
 
 
 exports.createUserData = functions.auth.user().onCreate((user) => {
+
 const db = admin.firestore()
-//const displayName = user.displayName;
+
 const uid = user.uid
 const email = user.email
 const role = "guest"
@@ -43,7 +44,6 @@ return newUserRef.set({
     userid: uid,
     email: email,
     jabatan: role,
-//    fname: displayName,
     createdAt: date
 })
 });

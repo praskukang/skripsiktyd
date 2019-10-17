@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface UserProfile {
   id?: string;
-  fname: string;
-  lname: string;
-  alamat: string;
   jabatan: string;
   createdAt: number;
 }
@@ -21,7 +20,7 @@ export class UserService {
 
   private users: Observable<UserProfile[]>;
 
-  constructor(db: AngularFirestore) {
+  constructor(db: AngularFirestore, private afa: AngularFireAuth) {
     this.userCollection = db.collection<UserProfile>('users', ref => ref.orderBy ('createdAt', 'desc'));
 
     this.users = this.userCollection.snapshotChanges().pipe(

@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { FcmService } from './providers/fcm.service';
@@ -27,7 +28,8 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
       AppRoutingModule,
       AngularFireModule.initializeApp(environment.firebase),
       AngularFirestoreModule.enablePersistence(),
-      AngularFireAuthModule
+      AngularFireAuthModule,
+      AngularFireStorageModule
     ],
 
   providers: [

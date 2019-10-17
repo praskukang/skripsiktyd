@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'edituser/:id', loadChildren: './pages/edituser/edituser.module#EdituserPageModule' },
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
   { path: 'reset', loadChildren: './pages/reset/reset.module#ResetPageModule' },
-//  { path: 'createprofile', loadChildren: './pages/createprofile/createprofile.module#CreateprofilePageModule' }
 
 ];
 

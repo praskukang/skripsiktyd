@@ -12,9 +12,6 @@ import { Router } from '@angular/router';
 export class EdituserPage implements OnInit {
 
   user: UserProfile = {
-    fname: undefined,
-    lname: undefined,
-    alamat: undefined,
     jabatan: undefined,
     createdAt: new Date().getTime(),
 

@@ -33,13 +33,14 @@ export class SidemenuPage implements OnInit {
   constructor(private router: Router,
     private authService: AuthService,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
-  ) {
+    private toastCtrl: ToastController) {
+
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
       }
     });
+
   }
 
   ngOnInit() {  }
@@ -59,6 +60,11 @@ export class SidemenuPage implements OnInit {
 async presentLoading() {
   this.loading = await this.loadingCtrl.create({ message: 'Loading...' });
   return this.loading.present();
+}
+
+async presentToast(message: string) {
+  const toast = await this.toastCtrl.create({ message, duration: 2000 });
+  toast.present();
 }
 
 }
