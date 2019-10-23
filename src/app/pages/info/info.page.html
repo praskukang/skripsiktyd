@@ -22,11 +22,15 @@
 
     <ion-item-sliding *ngFor="let item of infos">
       <ion-item  button [routerLink]="['/addinfo', item.id]">
-        <ion-label>
-        <h2>  {{ item.judul }} </h2>
+        <ion-card>
+        <ion-card-header>
+        <ion-card-title>   {{ item.judul }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
         <h2>  {{ item.isiberita }} </h2>
           <p>{{ item.createdAt | date:'short' }}</p>
-        </ion-label>
+        </ion-card-content>
+        </ion-card>
       </ion-item>
 
       <ion-item-options side="end">

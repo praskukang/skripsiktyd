@@ -22,12 +22,12 @@
 
     <ion-item-sliding *ngFor="let item of kass">
       <ion-item  button [routerLink]="['/addkas', item.id]">
-        <ion-label>
+        <ion-card-content>
         <h2>  Debit   : {{ item.debit }} </h2>
         <h2>  Kredit  : {{ item.kredit }} </h2>
         <h2>  Total   : {{ item.total }} </h2>
           <p>{{ item.createdAt | date:'short' }}</p>
-        </ion-label>
+        </ion-card-content>
       </ion-item>
 
       <ion-item-options side="end">
