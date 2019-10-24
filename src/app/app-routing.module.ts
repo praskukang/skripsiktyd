@@ -5,7 +5,6 @@ import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'sidemenu', loadChildren: './pages/sidemenu/sidemenu.module#SidemenuPageModule', canActivate: [AuthGuard] },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule', canActivate: [LoginGuard] },
   { path: 'addinfo', loadChildren: './pages/addinfo/addinfo.module#AddinfoPageModule' },
   { path: 'addinfo/:id', loadChildren: './pages/addinfo/addinfo.module#AddinfoPageModule' },
@@ -15,6 +14,9 @@ const routes: Routes = [
   { path: 'edituser/:id', loadChildren: './pages/edituser/edituser.module#EdituserPageModule' },
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
   { path: 'reset', loadChildren: './pages/reset/reset.module#ResetPageModule' },
+  { path: 'info', loadChildren: './pages/info/info.module#InfoPageModule', canActivate: [AuthGuard] },
+  { path: 'kas', loadChildren: './pages/kas/kas.module#KasPageModule', canActivate: [AuthGuard] },
+  { path: 'user', loadChildren: './pages/user/user.module#UserPageModule', canActivate: [AuthGuard] },
 
 ];
 

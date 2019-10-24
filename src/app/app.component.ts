@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { FcmService } from './providers/fcm.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
+import { User, AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +14,18 @@ import { ToastController } from '@ionic/angular';
 })
 export class AppComponent {
   public counter = 0;
+  navigate : any;
+  private loading: any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private fcm: FcmService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private authService: AuthService,
+    private loadingCtrl: LoadingController,
   ) {
+    this.sideMenu();
     this.initializeApp();
   }
 
@@ -42,6 +48,28 @@ export class AppComponent {
         }
       });
   }
+  sideMenu()
+{
+  this.navigate =
+  [
+    {
+      title : "Home",
+      url   : "/info",
+      icon  : "home"
+    },
+    {
+      title : "Kas KTYD",
+      url   : "/kas",
+      icon  : "ios-cash"
+    },
+    {
+      title : "User KTYD",
+      url   : "/user",
+      icon  : "contacts"
+    },
+  ]
+}
+
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -60,6 +88,22 @@ export class AppComponent {
       })
     });
   }
+  async logout() {
+  await this.presentLoading();
+
+  try {
+    await this.authService.logout();
+  } catch (error) {
+    console.error(error);
+  } finally {
+    this.loading.dismiss();
+  }
+}
+
+async presentLoading() {
+  this.loading = await this.loadingCtrl.create({ message: 'Loading...' });
+  return this.loading.present();
+}
 /*  presentToast(){
     this.helper.toast({
       message:"Press again to exitApp",
