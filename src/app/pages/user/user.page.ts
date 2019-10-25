@@ -11,7 +11,7 @@ export class UserPage implements OnInit {
 
   users: UserProfile[];
 
-  constructor(private userService: UserService,
+  constructor(private userService: UserService, private toastCtrl: ToastController,
 
   )
      { }
@@ -24,6 +24,16 @@ export class UserPage implements OnInit {
 
   remove(item) {
     this.userService.removeUser(item.id);
+  }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Khusus ADMIN KTYD',
+      duration: 4000,
+      position: 'middle',
+      color: 'dark',
+    });
+    toast.present();
   }
 
 }

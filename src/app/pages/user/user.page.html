@@ -44,9 +44,18 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/edituser" routerDirection="forward">
-      <ion-icon name="add"></ion-icon>
+    <ion-fab-button >
+      <ion-icon name="arrow-dropup"></ion-icon>
     </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="secondary" routerLink="/edituser" routerDirection="forward">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="secondary">
+          <ion-icon name="md-help" (click)="presentToast()"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
   </ion-fab>
+
 
 </ion-content>

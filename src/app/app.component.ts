@@ -73,14 +73,14 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#ff8000');
+      //this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.notificationSetup();
 
       this.platform.backButton.subscribe(() => {
         if (this.counter == 0) {
           this.counter++;
-//          this.presentToast();
           setTimeout(() => { this.counter = 0 }, 3000)
         } else {
           navigator [ 'app' ].exitApp();
@@ -104,11 +104,4 @@ async presentLoading() {
   this.loading = await this.loadingCtrl.create({ message: 'Loading...' });
   return this.loading.present();
 }
-/*  presentToast(){
-    this.helper.toast({
-      message:"Press again to exitApp",
-      duration:3000,
-      position:'bottom'
-    });
-  }*/
 }

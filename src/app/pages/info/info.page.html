@@ -22,7 +22,7 @@
 
     <ion-item-sliding *ngFor="let item of infos">
       <ion-item  button [routerLink]="['/addinfo', item.id]">
-        <ion-card>
+        <ion-card class="container">
         <ion-card-header>
         <ion-card-title>   {{ item.judul }} </ion-card-title>
         </ion-card-header>
@@ -44,9 +44,16 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/addinfo" routerDirection="forward">
-      <ion-icon name="add"></ion-icon>
+    <ion-fab-button >
+      <ion-icon name="arrow-dropup"></ion-icon>
     </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="secondary" routerLink="/addinfo" routerDirection="forward">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="secondary">
+          <ion-icon name="md-help" (click)="presentToast()"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
   </ion-fab>
-
 </ion-content>

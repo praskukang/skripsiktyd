@@ -52,12 +52,12 @@ export class AddkasPage implements OnInit {
     if (this.kasId) {
       this.kasService.updateKas(this.kas, this.kasId).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/kas']);
+        this.router.navigate(['/kas']);
       });
     } else {
       this.kasService.addKas(this.kas).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/kas']);
+        this.router.navigate(['/kas']);
       });
     }
   }

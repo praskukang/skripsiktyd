@@ -50,12 +50,12 @@ export class EdituserPage implements OnInit {
     if (this.UserId) {
       this.userService.updateUser(this.user, this.UserId).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/user']);
+        this.router.navigate(['/user']);
       });
     } else {
       this.userService.addUser(this.user).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/user']);
+        this.router.navigate(['/user']);
       });
     }
   }

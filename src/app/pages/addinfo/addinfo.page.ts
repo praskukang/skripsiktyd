@@ -51,12 +51,12 @@ export class AddinfoPage implements OnInit {
     if (this.infoId) {
       this.infoService.updateInfo(this.info, this.infoId).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/info']);
+        this.router.navigate(['/info']);
       });
     } else {
       this.infoService.addInfo(this.info).then(() => {
         loading.dismiss();
-        this.router.navigate(['sidemenu/info']);
+        this.router.navigate(['/info']);
       });
     }
   }

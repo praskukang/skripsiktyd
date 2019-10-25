@@ -23,8 +23,13 @@ export class KasPage implements OnInit {
     this.kasService.removeKas(item.id);
   }
 
-  async presentToast(message: string) {
-    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Khusus Anggota KTYD',
+      duration: 4000,
+      position: 'middle',
+      color: 'dark',
+    });
     toast.present();
   }
 

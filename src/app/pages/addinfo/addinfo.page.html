@@ -13,7 +13,7 @@
       <ion-input required type="text" placeholder="Judul" [(ngModel)]="info.judul"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-textarea required type="text" placeholder="Berita" [(ngModel)]="info.isiberita"></ion-textarea>
+      <ion-textarea rows="10" type="text" placeholder="Info" [(ngModel)]="info.isiberita"></ion-textarea>
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="saveInfo()">Save</ion-button>
