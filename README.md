@@ -1,3 +1,3 @@
 # skripsiktyd
-- rules firestore
-- rbac
+- npm install @ionic/angular@latest --save
+- npm install
