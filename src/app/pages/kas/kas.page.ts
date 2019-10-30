@@ -17,6 +17,7 @@ export class KasPage implements OnInit {
     this.kasService.getKass().subscribe(res => {
       this.kass = res;
     });
+    this.presentToast();
   }
 
   remove(item) {
@@ -26,9 +27,10 @@ export class KasPage implements OnInit {
   async presentToast() {
     const toast = await this.toastCtrl.create({
       message: 'Khusus Anggota KTYD',
-      duration: 4000,
+      duration: 5000,
       position: 'middle',
       color: 'dark',
+      showCloseButton: true
     });
     toast.present();
   }

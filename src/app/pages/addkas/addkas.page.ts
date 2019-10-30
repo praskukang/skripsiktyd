@@ -1,7 +1,7 @@
 import { Kas, KasService } from './../../services/kas.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,13 +21,15 @@ export class AddkasPage implements OnInit {
 
   kasId = null;
 
-  constructor(private router: Router, private route: ActivatedRoute, private kasService: KasService, private loadingController: LoadingController) { }
+  constructor(private router: Router, private route: ActivatedRoute, private kasService: KasService, private toastCtrl: ToastController,
+    private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.kasId = this.route.snapshot.params['id'];
     if (this.kasId)  {
       this.loadKas();
     }
+    this.presentToast();
   }
 
   async loadKas() {
@@ -60,6 +62,17 @@ export class AddkasPage implements OnInit {
         this.router.navigate(['/kas']);
       });
     }
+  }
+  
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Khusus ADMIN KTYD',
+      duration: 5000,
+      position: 'middle',
+      color: 'dark',
+      showCloseButton: true
+    });
+    toast.present();
   }
 
 }

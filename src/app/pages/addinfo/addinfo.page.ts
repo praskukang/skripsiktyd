@@ -1,7 +1,7 @@
 import { Info, InfoService } from './../../services/info.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,13 +20,15 @@ export class AddinfoPage implements OnInit {
 
   infoId = null;
 
-  constructor(private router: Router, private route: ActivatedRoute, private infoService: InfoService, private loadingController: LoadingController) { }
+  constructor(private router: Router, private route: ActivatedRoute, private infoService: InfoService, private toastCtrl: ToastController,
+    private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.infoId = this.route.snapshot.params['id'];
     if (this.infoId)  {
       this.loadInfo();
     }
+    this.presentToast();
   }
 
   async loadInfo() {
@@ -60,5 +62,17 @@ export class AddinfoPage implements OnInit {
       });
     }
   }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Khusus ADMIN KTYD',
+      duration: 5000,
+      position: 'middle',
+      color: 'dark',
+      showCloseButton: true
+    });
+    toast.present();
+  }
+
 
 }

@@ -20,6 +20,7 @@ export class UserPage implements OnInit {
     this.userService.getUsers().subscribe(res => {
       this.users = res;
     });
+      this.presentToast();
   }
 
   remove(item) {
@@ -29,9 +30,10 @@ export class UserPage implements OnInit {
   async presentToast() {
     const toast = await this.toastCtrl.create({
       message: 'Khusus ADMIN KTYD',
-      duration: 4000,
+      duration: 5000,
       position: 'middle',
       color: 'dark',
+      showCloseButton: true
     });
     toast.present();
   }

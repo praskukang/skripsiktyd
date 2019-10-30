@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfile, UserService } from './../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,13 +19,15 @@ export class EdituserPage implements OnInit {
 
   UserId = null;
 
-  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private loadingController: LoadingController) { }
+  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastCtrl: ToastController,
+    private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.UserId = this.route.snapshot.params['id'];
     if (this.UserId)  {
       this.loadUser();
     }
+    this.presentToast();
   }
 
   async loadUser() {
@@ -58,6 +60,17 @@ export class EdituserPage implements OnInit {
         this.router.navigate(['/user']);
       });
     }
+  }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Khusus ADMIN KTYD',
+      duration: 5000,
+      position: 'middle',
+      color: 'dark',
+      showCloseButton: true
+    });
+    toast.present();
   }
 
 }
