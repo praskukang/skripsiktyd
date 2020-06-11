@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase : {
-    apiKey: "AIzaSyBnt09uCWqdolUKr_9fgie27yIoHe2PcwY",
-    authDomain: "ktyd-developer.firebaseapp.com",
-    databaseURL: "https://ktyd-developer.firebaseio.com",
-    projectId: "ktyd-developer",
-    storageBucket: "ktyd-developer.appspot.com",
-    messagingSenderId: "538521733302",
-    appId: "1:538521733302:web:62732de1d2cca1a6"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
 
   }
 };
