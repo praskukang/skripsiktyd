@@ -28,7 +28,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic-native/toast": "^5.15.1",
     "@ionic/angular": "^4.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cordova-android": "^8.1.0",
     "cordova-plugin-androidx": "^1.0.2",
     "cordova-plugin-androidx-adapter": "^1.1.0",
